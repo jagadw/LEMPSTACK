@@ -40,3 +40,52 @@ exit
 ```
 
 # NGINX Configuration
+- Create the root web directory for your_domain
+```bash
+sudo mkdir /var/www/your_domain
+```
+- Create a new configuration file in sites-available
+```bash
+sudo nano /etc/nginx/sites-available/your_domain
+```
+- Insert the configuration below:
+```bash
+server {
+    listen 80;
+    server_name your_domain www.your_domain;
+    root /var/www/your_domain;
+
+    index index.html index.htm index.php;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+     }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+}
+```
+- Create a link to the configuration file from sites-enabled directory:
+```bash
+sudo ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/
+```
+- unlink the default configuration file from the /sites-enabled/ directory:
+```bash
+sudo unlink /etc/nginx/sites-enabled/default
+```
+- Test the configuration
+```bash
+sudo nginx -t
+```
+If any errors are reported, go back to your configuration file to review its contents before continuing.
+- Last step, reload Nginx to apply the changes:
+```bash
+sudo systemctl reload nginx
+``` 
