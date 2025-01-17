@@ -4,7 +4,7 @@ LEMP / LNMP(Linux + Nginx+ MySQL+ PHP)
 # How to install ?
 - Just type the command below :
 ``` bash
-sh Install_LEMP.sh
+sh install.sh
 ```
 
 # MYSQL Setup
@@ -40,20 +40,20 @@ exit
 ```
 
 # NGINX Configuration
-- Create the root web directory for your_domain
+- Create the root web directory
 ```bash
-sudo mkdir /var/www/your_domain
+sudo mkdir /var/www/your_webname
 ```
 - Create a new configuration file in sites-available
 ```bash
-sudo nano /etc/nginx/sites-available/your_domain
+sudo nano /etc/nginx/sites-available/your_webname
 ```
 - Insert the configuration below:
 ```bash
 server {
     listen 80;
-    server_name your_domain www.your_domain;
-    root /var/www/your_domain;
+    server_name (localhost / your_domain / www.your_domain);
+    root /var/www/your_webname;
 
     index index.html index.htm index.php;
 
@@ -74,7 +74,7 @@ server {
 ```
 - Create a link to the configuration file from sites-enabled directory:
 ```bash
-sudo ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/your_webname /etc/nginx/sites-enabled/
 ```
 - unlink the default configuration file from the /sites-enabled/ directory:
 ```bash
@@ -88,4 +88,20 @@ If any errors are reported, go back to your configuration file to review its con
 - Last step, reload Nginx to apply the changes:
 ```bash
 sudo systemctl reload nginx
-``` 
+```
+# Check the PHP with NGINX
+- Create a new file with name info.php :
+```bash
+nano /var/www/your_webname/info.php
+```
+- Add the following lines into the new file :
+```bash
+<?php
+phpinfo();
+?>
+```
+- Visit the localhost or (domain name / public IP address) you’ve set up in your Nginx configuration file, followed by /info.php:
+```bash
+http://(localhost/your_domain/public_ip)/info.php
+```
+If the web page show you the detailed information about your server, You are done!
