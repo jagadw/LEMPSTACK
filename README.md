@@ -105,3 +105,13 @@ phpinfo();
 http://(localhost/your_domain/public_ip)/info.php
 ```
 If the web page show you the detailed information about your server, You are done!
+
+# PHPMYADMIN (optional)
+- Download the phpmyadmin
+- Extract it
+- Move the phpmyadmin folder :
+```bash
+sudo mv phpmyadmin /var/www/phpmyadmin
+```
+- Visit the localhost or (domain name / public IP address) you’ve set up in your Nginx configuration file, followed by /phpmyadmin/:
+- If the web page show you the phpmyadmin, You are done!
