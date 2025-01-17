@@ -1,4 +1,4 @@
-# LEMPSTACK
+# LEMP stack
 LEMP / LNMP(Linux + Nginx+ MySQL+ PHP)
 
 # How to install ?
@@ -34,7 +34,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'yourpass
 ```bash
 FLUSH PRIVILEGES;
 ```
-- finish and exit
+- Finish and exit
 ```bash
 exit
 ```
@@ -113,5 +113,12 @@ If the web page show you the detailed information about your server, You are don
 ```bash
 sudo mv phpmyadmin /var/www/phpmyadmin
 ```
-- Visit the localhost or (domain name / public IP address) you’ve set up in your Nginx configuration file, followed by /phpmyadmin/:
-- If the web page show you the phpmyadmin, You are done!
+- Paste the link below into your browser:
+```bash
+http://(localhost/your_domain/public_ip)/phpmyadmin/
+```
+You will see the phpmyadmin login page.
+
+# FINISH
+- Additional: Read the basic_operation.txt
+- Note: Make sure the PHP, Nginx, and MySQL services are active.
