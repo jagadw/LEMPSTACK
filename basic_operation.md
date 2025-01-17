@@ -14,9 +14,9 @@ sudo systemctl stop nginx
 # MYSQL
 - Start:
 ```bash
-sudo systemctl start nginx
+sudo systemctl start mysql
 ```
 - Stop:
 ```bash
-sudo systemctl stop nginx
+sudo systemctl stop mysql
 ```
