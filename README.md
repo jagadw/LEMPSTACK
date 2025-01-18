@@ -120,5 +120,5 @@ http://(localhost/your_domain/public_ip)/phpmyadmin/
 You will see the phpmyadmin login page.
 
 # FINISH
-- Additional: Read the basic_operation.txt
+- Additional: Read the basic_operation.md
 - Note: Make sure the PHP, Nginx, and MySQL services are active.
