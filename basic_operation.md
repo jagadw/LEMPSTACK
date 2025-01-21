@@ -1,3 +1,13 @@
+# Update : Now, we can start or stop nginx & mysql using script.
+- Start via bash
+```bash
+sudo systemctl start nginx
+```
+- Start via bash
+```bash
+sudo systemctl start nginx
+```
+
 # NGINX
 - Start:
 ```bash
