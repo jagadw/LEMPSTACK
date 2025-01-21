@@ -5,7 +5,7 @@ sudo systemctl start nginx
 ```
 - Start via bash
 ```bash
-sudo systemctl start nginx
+sudo systemctl stop nginx
 ```
 
 # NGINX
